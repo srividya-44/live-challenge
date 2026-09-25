@@ -1,0 +1,110 @@
+:root{
+  --bg:#e9eee1; --ink:#16281f; --pine:#1f3b2d; --pine-t:#eef3e6;
+  --moss:#b7d36b; --sun:#f08a3c; --sky:#ebb411; --card:#fbfcf7; --muted:#5b6b60;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1a14; --ink:#dc3b96; --pine:#2a4c3a; --pine-t:#eef3e6;
+    --moss:#b7d36b; --sun:#f08a3c; --sky:#1d3340; --card:#182a20; --muted:#9db0a2;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1a14; --ink:#eaf1e2; --pine:#2f724e; --pine-t:#a4c96a;
+  --moss:#b7d36b; --sun:#f08a3c; --sky:#1d3340; --card:#182a20; --muted:#9db0a2;
+}
+
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  line-height:1.35; padding:14px;
+}
+h1,h2{letter-spacing:-.03em;line-height:1.02}
+
+/* ---------- MOBILE: single column ---------- */
+.grid{
+  display:grid; gap:12px; max-width:1180px; margin:0 auto;
+  grid-template-columns:1fr;
+  grid-template-areas:"hero" "route" "stat" "chat" "pack" "wx" "share";
+}
+.c{border-radius:22px;padding:20px;background:var(--card);overflow:hidden;min-width:0}
+
+.hero{grid-area:hero;background:var(--pine);color:var(--pine-t)}
+.hero h1{font-size:clamp(2.1rem,8vw,4.2rem);font-weight:800}
+.hero p{margin:12px 0 18px;max-width:34ch;opacity:.85}
+.btn{
+  display:inline-block;background:var(--sun);color:#1a1006;
+  font:600 1rem inherit;font-family:inherit;border:0;border-radius:99px;
+  padding:12px 22px;cursor:pointer;
+}
+.btn:focus-visible,.pk label:focus-within{outline:3px solid var(--moss);outline-offset:2px}
+.rate{font-size:.85rem;margin-top:14px;opacity:.8}
+
+.route{grid-area:route;background:var(--sky)}
+.route h2,.wx h2,.pack h2,.share h2,.chat h2{font-size:1.45rem;font-weight:600}
+.route svg{width:100%;height:auto;margin-top:10px}
+.route small{color:var(--muted)}
+
+.stat{
+  grid-area:stat;background:var(--moss);color:#16281f;
+  display:flex;flex-direction:column;justify-content:space-between;gap:10px;
+}
+.stat b{font-size:clamp(3rem,12vw,5rem);font-weight:800;letter-spacing:-.05em;line-height:.9}
+
+.chat{grid-area:chat;background:var(--sun);color:#1a1006}
+.bub{
+  background:#fff8ef;border-radius:16px 16px 16px 4px;
+  padding:10px 12px;margin-top:10px;font-size:.92rem;max-width:92%;
+}
+.bub.me{margin-left:auto;border-radius:16px 16px 4px 16px;background:#1a1006;color:#fff}
+
+.pack{grid-area:pack}
+.pk{list-style:none;padding:0;margin-top:12px;display:grid;gap:8px}
+.pk label{
+  display:flex;gap:10px;align-items:center;cursor:pointer;
+  padding:8px 10px;border-radius:12px;
+  background:color-mix(in srgb,var(--ink) 6%,transparent);
+}
+.pk input:checked+span{text-decoration:line-through;opacity:.5}
+.pk input{accent-color:var(--pine);width:18px;height:18px}
+
+.wx{grid-area:wx}
+.days{display:flex;align-items:flex-end;gap:8px;height:110px;margin-top:14px}
+.days div{
+  flex:1;border-radius:10px 10px 4px 4px;background:var(--sky);
+  text-align:center;font-size:.72rem;padding-top:4px;color:var(--ink);
+}
+.days .best{background:var(--pine);color:var(--pine-t)}
+
+.share{
+  grid-area:share;background:var(--pine);color:var(--pine-t);
+  display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+}
+.av{display:flex}
+.av i{
+  width:38px;height:38px;border-radius:50%;border:3px solid var(--pine);
+  margin-left:-10px;display:grid;place-items:center;
+  font-style:normal;font-weight:800;color:#16281f;
+}
+.av i:first-child{margin-left:0}
+
+/* ---------- DESKTOP: bento grid ---------- */
+@media (min-width:760px){
+  body{padding:28px}
+  .grid{
+    gap:16px;
+    grid-template-columns:repeat(12,1fr);
+    grid-template-areas:
+      "hero hero hero hero hero hero hero hero route route route route"
+      "hero hero hero hero hero hero hero hero route route route route"
+      "stat stat stat chat chat chat chat pack pack pack pack pack"
+      "wx   wx   wx   wx   wx   wx   share share share share share share";
+  }
+  .c{padding:28px;border-radius:28px}
+  .hero{display:flex;flex-direction:column;justify-content:flex-end;min-height:340px}
+  .route{display:flex;flex-direction:column;justify-content:space-between}
+}
