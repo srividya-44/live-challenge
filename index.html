@@ -3,70 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ridgeline – Plan your trail day with AI</title>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<title>Pulp: Cold-Pressed Juice, Made This Morning</title>
+<meta name="description" content="Fresh cold-pressed juice pressed every morning. Pick your blend, order for pickup or delivery, and get a weekly box at your door.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <main class="grid">
 
 <section class="c hero">
-  <h1>Plan a trail day before your coffee cools.</h1>
-  <p>Ridgeline picks the route, checks the weather window and builds your pack list.</p>
-  <div><button class="btn">Plan my hike</button></div>
-  <div class="rate">★★★★★ Rated 4.9 by 12,000 hikers</div>
+  <h1>Juice pressed at six. In your hand by nine.</h1>
+  <p>Whole fruit, no added sugar, and nothing that sat overnight.</p>
+  <div><a class="btn" href="#menu">Order now</a></div>
+  <div class="rate">★★★★★ 4.8 from 3,200 morning regulars</div>
 </section>
 
-<section class="c route">
-  <div>
-    <h2>Pick a route that fits your legs.</h2>
-    <small>Copper Lake loop · 9.4 km · 620 m up</small>
-  </div>
-  <svg viewBox="0 0 300 120" role="img" aria-label="Elevation profile">
-    <path d="M0 100 L40 90 L80 60 L120 70 L170 20 L210 45 L250 35 L300 80 L300 120 L0 120Z" fill="#1f3b2d" opacity=".9"/>
-    <path d="M0 100 L40 90 L80 60 L120 70 L170 20 L210 45 L250 35 L300 80" fill="none" stroke="#f08a3c" stroke-width="4" stroke-linejoin="round"/>
-    <circle cx="170" cy="20" r="6" fill="#f08a3c"/>
-  </svg>
-</section>
-
-<section class="c stat">
-  <b>3×</b>
-  <span>fewer wrong turns with offline maps that reroute for you.</span>
-</section>
-
-<section class="c chat">
-  <h2>Ask for a plan in plain words.</h2>
-  <div class="bub me">Easy 3-hour hike with a lake, Saturday.</div>
-  <div class="bub">Copper Lake loop. Start by 8:30 and you'll beat the afternoon clouds.</div>
-</section>
-
-<section class="c pack">
-  <h2>Pack list, made for today.</h2>
-  <ul class="pk">
-    <li><label><input type="checkbox"><span>Rain shell</span></label></li>
-    <li><label><input type="checkbox" checked><span>1.5 L water</span></label></li>
-    <li><label><input type="checkbox"><span>Trail snacks</span></label></li>
+<section class="c menu" id="menu">
+  <h2>Pick your blend.</h2>
+  <ul class="list">
+    <li><span class="dot" style="background:#d6245b"></span><b>Beet Burst</b><em>beet, apple, ginger</em><strong>$6.5</strong></li>
+    <li><span class="dot" style="background:#ffb627"></span><b>Mango Sunrise</b><em>mango, orange, turmeric</em><strong>$6.5</strong></li>
+    <li><span class="dot" style="background:#7fd6a4"></span><b>Green Reset</b><em>cucumber, kale, lime</em><strong>$7</strong></li>
+    <li><span class="dot" style="background:#8a5cf6"></span><b>Berry Dusk</b><em>blueberry, pear, mint</em><strong>$7</strong></li>
   </ul>
 </section>
 
-<section class="c wx">
-  <h2>See the best weather window.</h2>
-  <div class="days" role="img" aria-label="Weather score by day, Saturday is best">
-    <div style="height:45%">Thu</div>
-    <div style="height:60%">Fri</div>
-    <div class="best" style="height:100%">Sat</div>
-    <div style="height:70%">Sun</div>
-    <div style="height:35%">Mon</div>
+<section class="c stat">
+  <b>12<small>min</small></b>
+  <span>average wait from order to pickup.</span>
+</section>
+
+<section class="c track">
+  <h2>Follow your order.</h2>
+  <ol class="steps">
+    <li class="done"><i></i>Pressed</li>
+    <li class="done"><i></i>Bottled</li>
+    <li class="now"><i></i>On the way</li>
+    <li><i></i>At your door</li>
+  </ol>
+</section>
+
+<section class="c box">
+  <h2>Get a weekly box.</h2>
+  <div class="chips">
+    <span>Mon</span><span class="on">Wed</span><span>Fri</span>
+  </div>
+  <p>Six bottles, delivered cold. Skip or pause any week.</p>
+</section>
+
+<section class="c fruit">
+  <h2>Only real fruit goes in.</h2>
+  <div class="bubbles" aria-hidden="true">
+    <i style="background:#d6245b"></i>
+    <i style="background:#ffb627"></i>
+    <i style="background:#7fd6a4"></i>
+    <i style="background:#8a5cf6"></i>
+    <i style="background:#ff7a3d"></i>
   </div>
 </section>
 
-<section class="c share">
-  <h2>Share the plan with your group.</h2>
-  <div class="av" aria-hidden="true">
-    <i style="background:#9dc925">A</i>
-    <i style="background:#f08a3c">R</i>
-    <i style="background:#cfe2ee">M</i>
-  </div>
+<section class="c visit">
+  <h2>Visit the press room.</h2>
+  <p>14 Market Lane. Open daily, 6:30 am to 6 pm.</p>
+  <a class="btn light" href="#menu">Get directions</a>
 </section>
 
 </main>
